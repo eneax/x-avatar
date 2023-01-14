@@ -1,2 +1,3 @@
-# photo-booth
-My personal photo booth powered by AI
+# 📸 Photo Booth
+
+My personal photo booth powered by AI.
