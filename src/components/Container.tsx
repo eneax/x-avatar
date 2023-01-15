@@ -63,7 +63,7 @@ const Container = ({
         )}
       </Head>
 
-      <nav className="max-w-2xl mx-auto p-8 md:px-0">
+      <nav className="max-w-lg mx-auto p-8 md:px-0">
         <div className="flex items-center space-x-6">
           <Link
             href="/"
@@ -78,7 +78,7 @@ const Container = ({
         </div>
       </nav>
 
-      <main className="max-w-2xl mx-auto flex flex-col justify-center px-8 md:px-0 bg-gray-900">
+      <main className="max-w-lg mx-auto flex flex-col justify-center px-8 md:px-0 bg-gray-900">
         {children}
 
         <footer className="fixed bottom-5 left-5 w-auto h-auto z-10">
