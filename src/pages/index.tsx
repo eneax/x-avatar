@@ -3,15 +3,16 @@ import { NextPage } from "next";
 
 import Container from "@/components/Container";
 import Spinner from "@/components/Spinner";
-import ImageBlur from "@/components/ImageBlur";
+import Image from "@/components/Image";
 
+const defaultImage = "/images/default-image.png";
 const defaultInput = "closeup portrait painting of Harry Potter";
 
 const Home: NextPage = () => {
   const maxRetries = 20;
   const [input, setInput] = React.useState(defaultInput);
   const [isGenerating, setIsGenerating] = React.useState(false);
-  const [image, setImage] = React.useState("");
+  const [image, setImage] = React.useState(defaultImage);
   const [retry, setRetry] = React.useState(0);
   const [retryCount, setRetryCount] = React.useState(maxRetries);
   const [finalPrompt, setFinalPrompt] = React.useState("");
@@ -63,7 +64,6 @@ const Home: NextPage = () => {
 
     console.log("Generated!", data);
     setFinalPrompt(input);
-    setInput("");
     setImage(data.image);
     setIsGenerating(false);
   };
@@ -129,14 +129,13 @@ const Home: NextPage = () => {
               </div>
             </div>
 
-            {image && (
-              <div className="flex flex-col items-start border-gray-700 mt-6">
-                <ImageBlur alt={finalPrompt} src={image} />
-                <div className="mt-2">
-                  <small>{finalPrompt}</small>
-                </div>
-              </div>
-            )}
+            <div className="flex flex-col items-start border-gray-700 my-6">
+              <Image
+                alt={finalPrompt}
+                src={image}
+                isGenerating={isGenerating}
+              />
+            </div>
           </div>
         </div>
       </div>
