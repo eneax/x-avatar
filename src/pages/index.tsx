@@ -3,8 +3,9 @@ import { NextPage } from "next";
 
 import Container from "@/components/Container";
 import Spinner from "@/components/Spinner";
+import ImageBlur from "@/components/ImageBlur";
 
-const defaultInput = "closeup portrait of eneax as a Harry Potter character";
+const defaultInput = "closeup portrait painting of Harry Potter";
 
 const Home: NextPage = () => {
   const maxRetries = 20;
@@ -13,6 +14,7 @@ const Home: NextPage = () => {
   const [image, setImage] = React.useState("");
   const [retry, setRetry] = React.useState(0);
   const [retryCount, setRetryCount] = React.useState(maxRetries);
+  const [finalPrompt, setFinalPrompt] = React.useState("");
 
   const onUserChangedText = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setInput(event.target.value);
@@ -60,6 +62,8 @@ const Home: NextPage = () => {
     }
 
     console.log("Generated!", data);
+    setFinalPrompt(input);
+    setInput("");
     setImage(data.image);
     setIsGenerating(false);
   };
@@ -90,7 +94,7 @@ const Home: NextPage = () => {
 
   return (
     <Container>
-      <div className="flex flex-col justify-center items-left border-gray-700 py-16">
+      <div className="flex flex-col justify-center items-left border-gray-700 pt-8 pb-16">
         <div className="flex flex-col text-left min-h-screen">
           <div className="w-full mb-8">
             <textarea
@@ -122,6 +126,15 @@ const Home: NextPage = () => {
                 )}
               </button>
             </div>
+
+            {image && (
+              <div className="flex flex-col items-start border-gray-700 mt-6">
+                <ImageBlur alt={finalPrompt} src={image} />
+                <div className="mt-2">
+                  <small>{finalPrompt}</small>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
