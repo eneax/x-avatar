@@ -6,7 +6,7 @@ import Spinner from "@/components/Spinner";
 import Image from "@/components/Image";
 
 const defaultImage = "/images/default-image.png";
-const defaultInput = "closeup portrait painting of Harry Potter";
+const defaultInput = "closeup portrait of eneax as a Harry Potter character";
 
 const Home: NextPage = () => {
   const maxRetries = 20;
