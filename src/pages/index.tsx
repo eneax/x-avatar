@@ -21,7 +21,7 @@ const Home: NextPage = () => {
     setInput(event.target.value);
   };
 
-  const generateAction = async () => {
+  const generateAction = React.useCallback(async () => {
     console.log("Generating...");
 
     if (isGenerating && retry === 0) return;
@@ -66,7 +66,7 @@ const Home: NextPage = () => {
     setFinalPrompt(input);
     setImage(data.image);
     setIsGenerating(false);
-  };
+  }, [input, isGenerating, retry]);
 
   const sleep = (ms: number) =>
     new Promise((resolve) => setTimeout(resolve, ms));
@@ -90,7 +90,7 @@ const Home: NextPage = () => {
     if (retry === 0) return;
 
     runRetry();
-  }, [retry]);
+  }, [generateAction, retry, retryCount]);
 
   return (
     <Container>
