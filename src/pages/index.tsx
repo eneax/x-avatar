@@ -6,7 +6,8 @@ import Spinner from "@/components/Spinner";
 import Image from "@/components/Image";
 
 const defaultImage = "/images/default-image.png";
-const defaultInput = "closeup portrait of eneax as a Harry Potter character";
+const defaultInput =
+  "closeup portrait of a Harry Potter character, magical world, wands, robes, Hogwarts castle in the background";
 
 const Home: NextPage = () => {
   const maxRetries = 20;
