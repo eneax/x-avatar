@@ -9,7 +9,7 @@ const LogoImage = () => (
     <div className="rounded-full p-[1px] h-[36px] w-[36px] transition duration-300 group-hover:scale-105">
       <Image
         src="/images/logo.png"
-        alt="Photo Booth Logo"
+        alt="X-Avatar Logo"
         quality={95}
         className="rounded-full"
         width={36}
@@ -29,8 +29,8 @@ const Container = ({
   const router = useRouter();
 
   const meta = {
-    title: "Photo Booth",
-    description: "My personal photo booth powered by AI",
+    title: "X-Avatar",
+    description: "AI avatar generator built with Stable Diffusion",
     image: "https://eneaxharja.com/images/avatar.png",
     type: "website",
     date: new Date().toISOString(),
@@ -67,12 +67,12 @@ const Container = ({
         <div className="flex items-center space-x-6">
           <Link
             href="/"
-            title="Photo Booth"
+            title="X-Avatar"
             className="rounded-full flex items-center space-x-2 no-underline"
           >
             <LogoImage />
             <span className="tracking-tight font-semibold text-xl text-primary-50">
-              Photo Booth
+              X-Avatar
             </span>
           </Link>
         </div>
@@ -83,7 +83,7 @@ const Container = ({
 
         <footer className="fixed bottom-5 left-5 w-auto h-auto z-10">
           <a
-            href="https://github.com/eneax/photo-booth"
+            href="https://github.com/eneax/x-avatar"
             target="_blank"
             rel="noopener noreferrer"
             className="no-underline rounded-2xl px-4 py-2.5 mb-6 mr-4 bg-gray-900/90 transition duration-300 hover:bg-gray-800/90 bg-glass"
