@@ -1,10 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-const bufferToBase64 = (buffer: ArrayBuffer) => {
-  let arr = new Uint8Array(buffer);
-  const base64 = btoa(
-    arr.reduce((data, byte) => data + String.fromCharCode(byte), "")
-  );
+const bufferToBase64 = (buffer: Buffer) => {
+  const base64 = buffer.toString("base64");
   return `data:image/png;base64,${base64}`;
 };
 
@@ -29,7 +26,7 @@ const generateAction = async (req: NextApiRequest, res: NextApiResponse) => {
 
   if (response.ok) {
     const buffer = await response.arrayBuffer();
-    const base64 = bufferToBase64(buffer);
+    const base64 = bufferToBase64(Buffer.from(buffer));
     res.status(200).json({ image: base64 });
   } else if (response.status === 503) {
     const json = await response.json();
