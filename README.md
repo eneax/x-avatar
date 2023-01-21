@@ -2,6 +2,8 @@
 
 X-Avatar is your own AI avatar generator that uses Stable Diffusion to generate avatars based on your input.
 
+https://user-images.githubusercontent.com/19818937/213863587-5893ad15-b752-4640-8fb6-f4061be37b55.mov
+
 ## 🦄 Features
 
 - Next.js 13
