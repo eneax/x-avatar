@@ -10,8 +10,8 @@ https://user-images.githubusercontent.com/19818937/213863587-5893ad15-b752-4640-
 - React 18
 - TypeScript 4
 - Tailwind CSS 3
-- Path Mapping (for absolute imports)
 - Stable Diffusion
+- DreamBooth
 
 ## 🗄️ Environment Variables
 
